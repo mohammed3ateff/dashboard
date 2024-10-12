@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  
+</head>
+<body class="box-border	h-full min-h-svh bg-black">
+  <div class=" flex min-h-full	">
+    <aside class="sticky top-0 z-10 w-12 md:w-20 max-h-svh  	px-2 py-2 flex flex-col items-center justify-between	text-[#4c4c4c]">
+      <div class="flex flex-col items-center ">
+        <i class="fa-solid fa-gauge text-lg  text-[#3985fe] mb-6 md:text-3xl "></i>
+        <i class="fa-solid fa-globe text-xs  text-[#3985fe] py-1 px-1.5  rounded-lg bg-[#161c29]	cursor-pointer md:py-1.5 md:px-3.5 md:rounded-xl md:text-xl	"></i>
+        <i class="fa-solid fa-file-lines text-xs py-1 px-1.5 rounded-lg cursor-pointer  hover:text-[#3985fe]  transition duration-700 ease-in-out md:py-1.5 md:px-3.5 md:rounded-xl md:text-xl		"></i>
+        <i class="fa-solid fa-hard-drive text-xs py-1 px-1.5 rounded-lg cursor-pointer  mb-11 hover:text-[#3985fe]  transition duration-700 ease-in-out md:py-1.5 md:px-3.5 md:rounded-xl md:text-xl	 	"></i>
+        <i class="fa-solid fa-share-nodes text-xs py-1 px-1.5 rounded-lg cursor-pointer  hover:text-[#3985fe]  transition duration-700 ease-in-out	md:py-1.5 md:px-3.5 md:rounded-xl md:text-xl"></i>
+        <i class="fa-regular fa-clock text-xs py-1 px-1.5 rounded-lg cursor-pointer  hover:text-[#3985fe]  transition duration-700 ease-in-out md:py-1.5 md:px-3.5 md:rounded-xl md:text-xl	"></i>
+        <i class="fa-regular fa-comment-dots text-xs py-1 px-1.5 rounded-lg cursor-pointer 	hover:text-[#3985fe] transition duration-700 ease-in-out	md:py-1.5 md:px-3.5 md:rounded-xl md:text-xl"></i>
+      </div>
+      <div class="flex flex-col items-center  ">
+        <i class="fa-solid fa-microphone text-white text-xs flex items-center justify-center h-[18px] aspect-square  rounded-full  bg-[#f84d4d]  cursor-pointer  hover:text-[#3985fe]  transition duration-700 ease-in-out   md:h-[30px] "></i>
+        <i class="fa-solid fa-gear text-xs py-1 px-1.5 rounded-lg cursor-pointer  hover:text-[#3985fe]  transition duration-700 ease-in-out md:py-1.5 md:px-3.5 md:rounded-xl md:text-xl"></i>
+        <i class="fa-solid fa-headset text-xs py-1 px-1.5 rounded-lg cursor-pointer mb-11 hover:text-[#3985fe]  transition duration-700 ease-in-out md:py-1.5 md:px-3.5 md:rounded-xl md:text-xl"></i>
+        <i class="fa-solid fa-arrow-right-from-bracket text-xs py-1 px-1.5 text-[#a4371a] rounded-lg cursor-pointer  hover:text-[#3985fe]  transition duration-700 ease-in-out md:py-1.5 md:px-3.5 md:rounded-xl md:text-xl "></i>
+      </div>
+    </aside>
+    <div class="w-full h-full border-l border-[#4c4c4c94]">
+      <header class="sticky top-0 z-10		bg-black text-white	w-full p-3 h-10 flex justify-between items-center border-b	border-[#4c4c4c94]">
+        <h3 class=" font-bold ">Dashboard</h3>
+        <div class="flex items-center space-x-5	">
+          <div class="trans  bg-[#4c4c4c94] text-xs space-x-0.5 px-0.5 py-0.5 rounded-xl">
+            <i class="fa-regular fa-moon cursor-pointer bg-black p-1 rounded-full "></i>
+            <i class="fa-regular fa-sun text-[#767171] cursor-pointer p-1 rounded-full hover:bg-black hover:text-white transition duration-700 ease-in-out"></i>
+          </div>
+          <i class="fa-solid fa-bell cursor-pointer text-xs bg-[#4c4c4c94] px-1.5 py-1 rounded-full hover:bg-blue-10	hover:text-sky-500  transition duration-700 ease-in-out "></i>
+          <i class="fa-regular fa-face-smile cursor-pointer text-xl hover:scale-125	 hover:bg-blue-10	hover:text-sky-500  transition duration-700 ease-in-out"></i>
+        </div>
+      </header>
+      <div class="grid grid-rows-2 gap-y-5 sm:grid-rows-1  sm:grid-col-3 md:grid-cols-4  w-full min-h-full  ">
+        <div class=" h-full  w-full 	sm:col-start-1 sm:col-end-3 md:col-start-1 md:col-end-4">
+          <div class="mb-5 p-5  sm:p-2	grid  gap-y-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3	lg:gap-y-0 sm:gap-x-1		 w-full lg:min-h-[200px]">
+            <div class="  px-5 py-2 rounded-3xl bg-[#101010] text-center text-white ">
+              <h3 >Color Paletee Selection</h3>
+              <p class="text-[#4c4c4c] text-xs mb-3.5">mohammed atef app</p>
+              <i class="fa-solid fa-equals mb-3.5 transform rotate-90 h-[70px] aspect-square flex items-center justify-center mx-auto  border border-[#d75b3c] rounded-full bg-[#c74220] shadow-[0px 0px 20px 2px #f84d4d3d]	"></i>
+              <div class="flex justify-between text-xs w-full">
+                <div class="bg-[#171717] px-5 py-1.5  rounded-xl flex flex-col">
+                  <span class="text-[#4c4c4c]">Today</span>
+                  <span>00:57:56</span>
+                </div>
+                <div class="bg-[#171717] px-5 py-1.5  rounded-xl flex flex-col">
+                  <span class="text-[#4c4c4c]">Limits</span>
+                  <span>00:57:56</span>
+                </div>
+              </div>
+            </div>
+            <div class="  px-5 py-2  rounded-3xl bg-[#101010] text-white"> 
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <h4 class="text-[12px] inline mr-2">Today's tasks</h4>
+                  <span class="text-[12px] border-2 w-5 h-5 inline-flex items-center justify-center text-center rounded-lg  text-[#4c4c4c] border-[#171717]">3</span>
+                </div>
+                <span class="text-[12px] text-[#3a5b99]">Manage ></span>
+              </div>
+              <div class="flex justify-between border-2 border-[#281a1a] mb-1 py-1.5 px-3 bg-[#171717] rounded-xl text-[10px]">
+                <div class="flex grow  overflow-hidden ">
+                  <i class="fa-solid fa-equals transform rotate-90  mr-2 flex items-center justify-center h-full aspect-square border border-[#d75b3c] bg-[#c74220] rounded-full "></i>
+                  <div>
+                    <p class="text-[13px]  truncate	">Color Palette Selection </p>
+                    <span class="text-[#3a5b99]">Mohammed Atef </span>
+                  </div>
+                </div>
+                <i class="fa-solid fa-star pt-1 ml-2 text-[#707070] "></i>
+
+              </div>
+              <div class="flex justify-between  mb-1 py-1.5 px-3 bg-[#171717] rounded-xl text-[10px]">
+                <div class="flex grow  overflow-hidden ">
+                  <i class="fa-solid fa-play  mr-2 flex items-center justify-center h-full aspect-square border border-[#3781fc] text-[#3781fc] rounded-full "></i>
+                  <div>
+                    <p class="text-[13px] text-[#505050] truncate	">Color Palette Selection dsds dsdsd </p>
+                    <span class="text-[#3a5b99]">Mohammed Atef </span>
+                  </div>
+                </div>
+                <i class="fa-solid fa-star pt-1 ml-2 text-[#707070] "></i>
+
+              </div>
+              <div class="flex justify-between  mb-1 py-1.5 px-3 bg-[#171717] rounded-xl text-[10px]">
+                <div class="flex grow  overflow-hidden ">
+                  <i class="fa-solid fa-play  mr-2 flex items-center justify-center h-full aspect-square border border-[#3781fc] text-[#3781fc] rounded-full "></i>
+                  <div>
+                    <p class="text-[13px] text-[#505050] truncate	">Color Palette Selection dsds dsdsd </p>
+                    <span class="text-[#3a5b99]">Mohammed Atef </span>
+                  </div>
+                </div>
+                <i class="fa-solid fa-star pt-1 ml-2 text-[#707070] "></i>
+
+              </div>
+            </div>
+            <div class="  px-5 py-2 rounded-3xl bg-[#101010] text-center text-white">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <h4 class="text-[12px] inline mr-2">Today's meeting</h4>
+                  <span class="text-[12px] border-2 w-5 h-5 inline-flex items-center justify-center text-center rounded-lg  text-[#4c4c4c] border-[#171717]">3</span>
+                </div>
+                <span class="text-[12px] text-[#3a5b99]">Viwe all ></span>
+              </div>
+              <div  class="grid grid-cols-2 w-full h-[80%] gap-2 grid-rows-2	">
+                <div class="bg-[#351a1a] overflow-hidden border border-[#431d1d] rounded-xl py-1.5 px-3">
+                  <div class="flex justify-between items-center">
+                    <div class="text-[9px] text-start mb-1">
+                      <span class="block text-[9px] text-[#434343]">AM</span>
+                      <span class="text-[12px] text-[#cb7979]">10:00</span>
+                    </div>
+                    <i class="fa-brands fa-discord text-[#f65151] bg-[#532121] text-[12px] rounded-full p-2 "></i>
+                  </div>
+                  <div class="truncate text-[10px] leading-3	 text-start text-[#434343]">
+                    present the project and geting feadback
+                  </div>
+                </div>
+                <div class="bg-[#171717] overflow-hidden rounded-xl py-1.5 px-3">
+                  <div class="flex justify-between items-center">
+                    <div class="text-[9px] text-start mb-1">
+                      <span class="block text-[9px] text-[#434343]">PM</span>
+                      <span class="text-[12px] text-[#bfbfbf]">01:00</span>
+                    </div>
+                    <i class="fa-solid fa-video text-[#767676] bg-[#303030] text-[12px] rounded-full p-2 "></i>
+                  </div>
+                  <div class="truncate text-[10px] leading-3	 text-start text-[#434343]">
+                    present the project and geting feadback
+                  </div>
+                </div>
+                <div class="bg-[#171717] overflow-hidden rounded-xl py-1.5 px-3">
+                  <div class="flex justify-between items-center">
+                    <div class="text-[9px] text-start mb-1">
+                      <span class="block text-[9px] text-[#434343]">PM</span>
+                      <span class="text-[12px] text-[#bfbfbf]">03:00</span>
+                    </div>
+                    <i class="fa-solid fa-atom text-[#767676] bg-[#303030] text-[12px] rounded-full p-2 "></i>
+                  </div>
+                  <div class="truncate text-[10px] leading-3	 text-start text-[#434343]">
+                    present the project and geting feadback
+                  </div>
+                </div>
+                <div class="text-[#234687] overflow-hidden bg-[#161c29] rounded-xl p-2 flex flex-col items-center justify-center ">
+                  <i class="fa-solid fa-plus text-[#234687]  border border-[#234687] text-[12px] rounded-full h-[30px] aspect-square flex justify-center items-center"></i>
+                  <div class="text-[12px] md:text-[8px] lg:text-[10px]	">schedule meeting</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-[white] px-5  sm:px-2 flex justify-between items-center  py-3 ">
+            <div class=" flex justify-between items-center">
+              <h3 class="mr-3 text-xs sm:text-lg		">Projects</h3>
+              <div class="bg-[#171717] rounded-full px-5 py-1.5 text-xs	flex justify-between items-center">
+                <i class="fa-solid fa-arrow-right-arrow-left fa-rotate-90 mr-1 text-[10px]"></i>
+                <div>Filter</div>
+              </div>
+            </div>
+            <ul class="flex justify-between items-center bg-[#171717] rounded-full py-px	 text-xs  text-[#434343]">
+              <li class="py-1.5 px-3">Today</li>
+              <li class="text-white bg-black rounded-full py-1.5 px-3">Week</li>
+              <li class="py-1.5 px-3">Month</li>
+              <li class="py-1.5 px-3">Year</li>
+            </ul>
+          </div> 
+          <div class="flex w-full overflow-auto max-w-[375px] sm:max-w-[600px] lg:max-w-[700px] max-h-[300px] lg:max-w-full lg:max-h-full border-t border-[#4c4c4c94]">
+            <div class=" h-full text-[10px]  px-1  text-[#494949] sticky left-0 z-10 bg-black  border-r border-[#4c4c4c94]">
+              <div class="mt-14">09:00</div>
+              <div class="mt-7">10:00</div>
+              <div class="mt-3 text-[#cb7979]">10:28</div>
+              <div class="mt-5">11:00</div>
+              <div class="mt-7">12:00</div>
+              <div class="mt-7">01:00</div>
+              <div class="mt-7">02:00</div>
+              <div class="mt-7">03:00</div>
+              <div class="mt-7">04:00</div>
+              <div class="mt-7">05:00</div>
+              <div class="mt-7">06:00</div>
+              <div class="mt-7">07:00</div>
+              <div class="mt-7">08:00</div>
+              <div class="mt-7">09:00</div>
+            </div>
+            <div class=" w-full relative	grid grid-cols-[repeat(5,200px)] lg:grid-cols-5 gap-x-1	">
+              <div class="absolute border-b border-[#732323] w-[1005px] lg:w-full left-0 top-[131px]" ></div>
+
+              <div class="  border-r border-[#4c4c4c94] px-1">
+                <div class="bg-[#101010] text-[#434343] px-1 py-2 text-xs mb-1"> MON 18</div>
+                <div class="bg-[#171717] rounded-lg p-2  text-xs mb-1 " >
+                  <div class="text-[#494949] flex items-center gap-x-1">
+                    <i class="fa-solid fa-circle text-[7px] text-[#828282]"></i>
+                    <div>Done</div>
+                  </div>
+                  <div class="text-[#939393] py-1">Design Brief Review</div>
+                  <p class="text-[#494949] ">Review project goals and objectied</p>
+                  <div class="flex relative	mt-8 mb-3">
+                    <i class="fa-regular fa-face-tired absolute bottom-0 bg-[#3b3b3b] rounded-full text-white"></i>
+                    <i class="fa-regular fa-face-surprise absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-2"></i>
+                    <i class="fa-regular fa-face-sad-tear absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-4"></i>
+                    <div class="absolute bottom-0 left-6 bg-[#3b3b3b] text-white rounded-full w-3 h-3 text-[6px] flex items-center justify-center">+8</div> 
+                  </div>
+                  <div class="text-[#494949] flex text-[10px] ">
+                    <div class="mr-2">
+                      <i class="fa-solid fa-clock"></i>
+                      01h 55m
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-comment"></i>
+                      175
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-[#171717] rounded-lg p-2  text-xs mb-1" >
+                  <div class="text-[#494949] flex items-center gap-x-1">
+                    <i class="fa-solid fa-circle text-[7px] text-[#828282]"></i>
+                    <div>Done</div>
+                  </div>
+                  <div class="text-[#939393] py-1">Moodboard Creation</div>
+                  <p class="text-[#494949] mb-3.5">Define the visual direction</p>
+                </div>
+                <div class=" bg-[#171717] rounded-lg p-2  text-xs mb-1 py-5">
+                  <div class="text-[#494949] flex items-center gap-x-1">
+                    <i class="fa-solid fa-circle text-[7px] text-[#828282]"></i>
+                    <p>Brake time</p>
+                  </div>
+                </div>
+                <div class="bg-[#171717] rounded-lg p-2  text-xs mb-1">
+                  <div class="text-[#494949] flex items-center gap-x-1">
+                    <div>Done</div>
+                    <i class="fa-solid fa-circle text-[7px] text-[#828282]"></i>
+                  </div>
+                  <div class="text-[#939393] py-1">Sketching & Ideation</div>
+                  <p class="text-[#494949]">Define the visual direction</p>
+                </div>
+              </div>
+              <div class="border-r border-[#4c4c4c94] pr-1">
+                <div class="bg-[#101010] text-[#434343] px-1 py-2 text-xs mb-1"> TUE 19</div>
+                <div class="bg-[#171717] rounded-lg p-2  text-xs mb-1 " >
+                  <div class="text-[#494949] flex items-center gap-x-1">
+                    <i class="fa-solid fa-circle text-[7px] text-[#828282]"></i>
+                    <div>Done</div>
+                  </div>
+                  <div class="text-[#939393] py-1">Typography & Layout Design</div>
+                  <p class="text-[#494949]">Help with choose fonts and layout elements for the design</p>
+                  <div class="flex relative	mt-[150px] mb-3">
+                    <i class="fa-regular fa-face-tired absolute bottom-0 bg-[#3b3b3b] rounded-full text-white"></i>
+                    <i class="fa-regular fa-face-surprise absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-2"></i>
+                  </div>
+                  <div class="text-[#494949] flex text-[10px] ">
+                    <div class="mr-2">
+                      <i class="fa-solid fa-clock"></i>
+                      05h 03m
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-comment"></i>
+                      12
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class=" bg-[#171717] rounded-lg p-2  text-xs mb-1 py-5">
+                  <div class="text-[#494949] flex items-center gap-x-1">
+                    <i class="fa-solid fa-circle text-[7px] text-[#828282]"></i>
+                    <p>Brake time</p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-r border-[#4c4c4c94] pr-1 ">
+                <div class="bg-[#280c0c] text-white border-b border-[#732323] px-1 py-2 text-xs mb-1"> WED 20</div>
+                <div class="bg-[#280c0c] rounded-lg p-2  text-xs mb-1 " >
+                  <div class="text-[#494949] flex items-center gap-x-1 text-[#ffb800]">
+                    <i class="fa-solid fa-circle text-[7px] "></i>
+                    <div>Medum</div>
+                  </div>
+                  <div class="text-[#939393] py-1">Color Palette Selection</div>
+                  <p class="text-[#494949]">Create a color scheme</p>
+                  <div class="flex relative	mt-20 mb-3">
+                    <i class="fa-regular fa-face-tired absolute bottom-0 bg-[#3b3b3b] rounded-full text-white"></i>
+                    <i class="fa-regular fa-face-surprise absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-2"></i>
+                  </div>
+                  <div class="text-[#494949] flex text-[10px] ">
+                    <div class="mr-2 bg-[#3f2929] rounded-full px-2 text-[#fff]" >
+                      <i class="fa-solid fa-clock"></i>
+                      01h:24m
+                    </div>
+                    <div class="text-[#fff]">
+                      <i class="fa-solid fa-comment"></i>
+                      3
+                    </div>
+                  </div>
+                </div>
+                <div class=" bg-[#171717] rounded-lg p-2  text-xs mb-1 py-5">
+                  <div class="text-[#494949] flex items-center gap-x-1">
+                    <i class="fa-solid fa-circle text-[7px] text-[#828282]"></i>
+                    <p>Brake time</p>
+                  </div>
+                </div>
+                <div class="bg-[#161c29] rounded-lg p-2  text-xs mb-1 " >
+                  <div class="text-[#df471e] flex items-center gap-x-1 ">
+                    <i class="fa-solid fa-circle text-[7px] "></i>
+                    <div>High</div>
+                  </div>
+                  <div class="text-[#939393] py-1">User Interface (UI) Design</div>
+                  <p class="text-[#494949]">Create an appealing and visually engaging interface</p>
+                  <div class="flex relative	mt-16 mb-3">
+                    <i class="fa-regular fa-face-tired absolute bottom-0 bg-[#3b3b3b] rounded-full text-white"></i>
+                    <i class="fa-regular fa-face-surprise absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-2"></i>
+                    <i class="fa-regular fa-face-sad-tear absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-4"></i>
+                    <div class="absolute bottom-0 left-6 bg-[#3b3b3b] text-white rounded-full w-3 h-3 text-[6px] flex items-center justify-center">+2</div> 
+                  </div>
+                  <div class="text-[#494949] flex text-[10px] ">
+                    <div>
+                      <i class="fa-solid fa-comment"></i>
+                      34
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-r border-[#4c4c4c94] pr-1">
+                <div class="bg-[#101010] text-[#434343] px-1 py-2 text-xs mb-1"> THU 21</div>
+                <div class="bg-[#161c29] rounded-lg p-2  text-xs mb-1 " >
+                  <div class="text-[#df471e] flex items-center gap-x-1 ">
+                    <i class="fa-solid fa-circle text-[7px] "></i>
+                    <div>High</div>
+                  </div>
+                  <div class="text-[#939393] py-1">User Interface (UI) Design</div>
+                  <p class="text-[#494949]">Create an appealing and visually engaging interface</p>
+                  <div class="flex relative	mt-[86px] mb-3">
+                    <i class="fa-regular fa-face-tired absolute bottom-0 bg-[#3b3b3b] rounded-full text-white"></i>
+                    <i class="fa-regular fa-face-surprise absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-2"></i>
+                    <i class="fa-regular fa-face-sad-tear absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-4"></i>
+                    <div class="absolute bottom-0 left-6 bg-[#3b3b3b] text-white rounded-full w-3 h-3 text-[6px] flex items-center justify-center">+2</div> 
+                  </div>
+                  <div class="text-[#494949] flex text-[10px] ">
+                    <div>
+                      <i class="fa-solid fa-comment"></i>
+                      34
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-[#161c29] rounded-lg p-2  text-xs mb-1 " >
+                  <div class="text-[#33e854] flex items-center gap-x-1 ">
+                    <i class="fa-solid fa-circle text-[7px] "></i>
+                    <div>Low</div>
+                  </div>
+                  <div class="text-[#939393] py-1">Prototype Creation</div>
+                  <p class="text-[#494949]">Review a prototype to showcase the design functionality</p>
+                </div>
+                <div class=" bg-[#171717] rounded-lg p-2  text-xs mb-1 py-5">
+                  <div class="text-[#494949] flex items-center gap-x-1">
+                    <i class="fa-solid fa-circle text-[7px] text-[#828282]"></i>
+                    <p>Brake time</p>
+                  </div>
+                </div>
+                <div class="bg-[#161c29] rounded-lg p-2  text-xs mb-1 " >
+                  <div class="text-[#df471e] flex items-center gap-x-1 ">
+                    <i class="fa-solid fa-circle text-[7px] "></i>
+                    <div>High</div>
+                  </div>
+                  <div class="text-[#939393] py-1">User Interface (UI) Design</div>
+                  <p class="text-[#494949]">Create an appealing and visually engaging interface</p>
+                  <div class="flex relative	mt-[86px] mb-3">
+                    <i class="fa-regular fa-face-tired absolute bottom-0 bg-[#3b3b3b] rounded-full text-white"></i>
+                    <i class="fa-regular fa-face-surprise absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-2"></i>
+                    <i class="fa-regular fa-face-sad-tear absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-4"></i>
+                    <div class="absolute bottom-0 left-6 bg-[#3b3b3b] text-white rounded-full w-3 h-3 text-[6px] flex items-center justify-center">+2</div> 
+                  </div>
+                  <div class="text-[#494949] flex text-[10px] ">
+                    <div>
+                      <i class="fa-solid fa-comment"></i>
+                      34
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <div class="bg-[#101010] text-[#434343] px-1 py-2 text-xs mb-1"> FRI 22</div>
+                <div class="bg-[#161c29] rounded-lg p-2  text-xs mb-1 " >
+                  <div class="text-[#33e854] flex items-center gap-x-1 ">
+                    <i class="fa-solid fa-circle text-[7px] "></i>
+                    <div>Low</div>
+                  </div>
+                  <div class="text-[#939393] py-1">Conduct User Testing</div>
+                </div>
+                <div class="bg-[#161c29] rounded-lg p-2  text-xs mb-1 " >
+                  <div class="text-[#df471e] flex items-center gap-x-1 ">
+                    <i class="fa-solid fa-circle text-[7px] "></i>
+                    <div>High</div>
+                  </div>
+                  <div class="text-[#939393] py-1">Client Presentation</div>
+                  <p class="text-[#494949]">Present the project and gather feedback from the clint</p>
+                  <div class="flex relative	mt-[118px] mb-3">
+                    <i class="fa-regular fa-face-tired absolute bottom-0 bg-[#3b3b3b] rounded-full text-white"></i>
+                    <i class="fa-regular fa-face-surprise absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-2"></i>
+                    <i class="fa-regular fa-face-sad-tear absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-4"></i>
+                    <div class="absolute bottom-0 left-6 bg-[#3b3b3b] text-white rounded-full w-3 h-3 text-[6px] flex items-center justify-center">+8</div> 
+                  </div>
+                  <div class="text-[#494949] flex text-[10px] ">
+                    <div>
+                      <i class="fa-solid fa-comment"></i>
+                      237
+                    </div>
+                  </div>
+                </div>
+                <div class=" bg-[#171717] rounded-lg p-2  text-xs mb-1 py-5">
+                  <div class="text-[#494949] flex items-center gap-x-1">
+                    <i class="fa-solid fa-circle text-[7px] text-[#828282]"></i>
+                    <p>Brake time</p>
+                  </div>
+                </div>
+                <div class="bg-[#161c29] rounded-lg p-2  text-xs mb-1 " >
+                  <div class="text-[#df471e] flex items-center gap-x-1 ">
+                    <i class="fa-solid fa-circle text-[7px] "></i>
+                    <div>High</div>
+                  </div>
+                  <div class="text-[#939393] py-1">User Interface (UI) Design</div>
+                  <p class="text-[#494949]">Create an appealing and visually engaging interface</p>
+                  <div class="flex relative	mt-[86px] mb-3">
+                    <i class="fa-regular fa-face-tired absolute bottom-0 bg-[#3b3b3b] rounded-full text-white"></i>
+                    <i class="fa-regular fa-face-surprise absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-2"></i>
+                    <i class="fa-regular fa-face-sad-tear absolute bottom-0	bg-[#3b3b3b] rounded-full text-white left-4"></i>
+                    <div class="absolute bottom-0 left-6 bg-[#3b3b3b] text-white rounded-full w-3 h-3 text-[6px] flex items-center justify-center">+2</div> 
+                  </div>
+                  <div class="text-[#494949] flex text-[10px] ">
+                    <div>
+                      <i class="fa-solid fa-comment"></i>
+                      34
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class=" p-5 min-h-full  sm:p-0  border-l border-t border-[#4c4c4c94]  sm:col-start-3 sm:col-end-4 sm:border-t-0 md:col-start-4 md:col-end-5">
+          <div class="p-2 border-b border-[#4c4c4c94] text-white">
+            <div class="">
+              <div class="flex  justify-between items-center		">
+                <div class="flex items-start ">
+                  <p class="mr-3 text-[12px]">Activity</p>
+                  <div class="bg-[#08220c]  rounded flex items-center p-px px-0.5	 text-[#506766]">
+                    <span class="text-[10px] mr-1">+12%</span>
+                    <i class="fa-solid fa-arrow-trend-up text-[9px]"></i>
+                  </div>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical text-[12px]"></i>
+              </div>
+              <div class="text-white text-lg mt-[-7px]	">83%</div>
+            </div>
+            <div class=" min-h-[100px] w-full grid grid-cols-5 gap-x-2 lg:gap-x-px	">
+              <div class="bg-[#161616]	rounded-md overflow-hidden	 relative">
+                <div class="h-[92%] bg-[#1f1f1f]  absolute left-0 right-0 bottom-0 text-center flex flex-col justify-end">
+                  <span class="text-[8px]">Mon</span>
+                  <span class="text-[10px]">92 %</span>
+                </div>
+              </div>
+              <div class="bg-[#161616]	rounded-md overflow-hidden	 relative">
+                <div class="h-[41%] bg-[#1f1f1f]  absolute left-0 right-0 bottom-0 text-center flex flex-col justify-end">
+                  <span class="text-[8px]">Tue</span>
+                  <span class="text-[10px]"> <span class="text-[#d34646]">41</span> %</span>
+                </div>
+              </div>
+              <div class="bg-[#161616]	rounded-md overflow-hidden	 relative">
+                <div class="h-[78%] bg-[#3c3c3c]  absolute left-0 right-0 bottom-0 text-center flex flex-col justify-end">
+                  <span class="text-[8px]">Wed</span>
+                  <span class="text-[10px]">78 %</span>
+                </div>
+              </div>
+              <div class="bg-[#161616]	rounded-md	overflow-hidden relative">
+                <div class="h-[3%] bg-[#333d4d]  absolute left-0 right-0 bottom-0 text-center flex flex-col justify-end">
+                  <span class="text-[8px]">Thu</span>
+                  <span class="text-[10px]">0 %</span>
+                </div>
+              </div>
+              <div class="bg-[#161616]	rounded-md overflow-hidden	 relative">
+                <div class="h-[3%] bg-[#333d4d]  absolute left-0 right-0 bottom-0 text-center flex flex-col justify-end">
+                  <span class="text-[8px]">Fri</span>
+                  <span class="text-[10px]">0 %</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="p-2 border-b border-[#4c4c4c94] text-white">
+            <div class="">
+              <div class="flex  justify-between items-center		">
+                <div class="flex items-start ">
+                  <p class="mr-3 text-[12px]">Projects worked</p>
+                  <div class="bg-[#351a1a]  rounded flex items-center p-px px-0.5	 text-[#506766]">
+                    <span class="text-[10px] mr-1">-5%</span>
+                    <i class="fa-solid fa-arrow-trend-down text-[9px]"></i>
+                  </div>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical text-[12px]"></i>
+              </div>
+              <div class="text-white text-lg mt-[-7px]	">83%</div>
+            </div>
+            <div class=" w-full flex items-center justify-between">
+              <!-- Donut Chart -->
+              <div class="w-36 h-36 sm:w-20 sm:h-20 mr-8 sm:mr-3 ">
+                <canvas id="donut-chart"></canvas>
+              </div>
+              <div class="w-full sm:text-xs">
+                <div class=" flex  justify-between items-center	">
+                  <div class="flex items-center">
+                    <i class="fa-regular fa-circle text-[7px] mr-2 text-[#fea700]"></i>
+                    <div class="text-[#828282]">Over9K</div>
+                  </div>
+                  <div>44%</div>
+                </div>
+                <div class=" flex  justify-between items-center	">
+                  <div class="flex items-center">
+                    <i class="fa-regular fa-circle text-[7px] mr-2 text-[#30d751]"></i>
+                    <div class="text-[#828282]">MagnumShop</div>
+                  </div>
+                  <div>24%</div>
+                </div>
+                <div class=" flex  justify-between items-center	">
+                  <div class="flex items-center">
+                    <i class="fa-regular fa-circle text-[7px] mr-2 text-[#fc4f4f]"></i>
+                    <div class="text-[#828282]">Doctor+</div>
+                  </div>
+                  <div>24%</div>
+                </div>
+                <div class=" flex  justify-between items-center	">
+                  <div class="flex items-center">
+                    <i class="fa-regular fa-circle text-[7px] mr-2 text-[#3479f9]"></i>
+                    <div class="text-[#828282]">AfterMidnight</div>
+                  </div>
+                  <div>24%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row-span-2 p-2">
+            <div class="flex justify-between items-center mb-3 text-[12px]">
+              <h4 class=" text-white  ">Reminders</h4>
+              <span class=" text-[#3a5b99]">Manage ></span>
+            </div>
+            <div class="w-full mb-1  bg-[#101010] rounded-xl px-3 py-2.5">
+              <div class="flex justify-between items-start">
+                <p class="text-white">09:30 <span class="text-[#767676] text-[10px]">AM</span></p>
+                <div class="flex items-center ">
+                  <span class="text-[#37f65d] text-[12px] mr-2">Low</span>
+                  <i class="fa-solid fa-circle text-[7px] text-[#37f65d]"></i>
+                </div>
+              </div>
+
+              <p class="text-[#737373] text-[12px]">Check test results</p>
+
+            </div>
+            <div class="w-full mb-1  bg-[#101010] rounded-xl px-3 py-2.5">
+              <div class="flex justify-between items-start">
+                <p class="text-white">10:30 <span class="text-[#767676] text-[10px]">AM</span></p>
+                <div class="flex items-center ">
+                  <span class="text-[#e84b22] text-[12px] mr-2">High</span>
+                  <i class="fa-solid fa-circle text-[7px] text-[#e84b22]"></i>
+                </div>
+              </div>
+
+              <p class="text-[#737373] text-[12px]">Client Presentation</p>
+
+            </div>
+            <div class="w-full mb-1  bg-[#101010] rounded-xl px-3 py-2.5">
+              <div class=" flex  justify-between  items-start ">
+                <p class="text-white">04:15 <span class="text-[#767676] text-[10px]">PM</span></p>
+                <div class="flex items-center ">
+                  <span class="text-[#e84b22] text-[12px] mr-2">High</span>
+                  <i class="fa-solid fa-circle text-[7px] text-[#e84b22]"></i>
+                </div>
+              </div>
+
+                <p class="text-[#737373] text-[12px] 	  ">Add new subtasl to doctor </p>
+
+            </div>
+            <div class="w-full flex  justify-center items-center text-[#3e63a7] bg-[#161c29] rounded-xl px-3 py-2.5">
+              Add remider
+            </div>
+
+          </div>
+        </div>
+    </div>
+    <!-- <main class="bg-sky-500 	top-5   ">
+      <h1>mohammed</h1>
+    </main> -->
+    <!-- <section class="bg-green"></section> -->
+  </div>
+  
+
+
+  <script src="/script.js"></script>
+</body>
+</html>
